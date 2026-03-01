@@ -1,2 +1,2 @@
-# CFE-Final-Test---Tr-ng-Quang-M-nh
+# CFE-Final-Test
 Game puzzle board
