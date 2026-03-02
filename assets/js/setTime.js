@@ -1,6 +1,5 @@
 // Chạy thời gian
-const btnStart = document.querySelector("#start-button");
-btnStart.addEventListener("click", () => {
+(document.querySelector("#start-button")).addEventListener("click", () => {
     const timer = setInterval(() => {
         const minute = document.querySelector("#minute");
         const second = document.querySelector("#second");

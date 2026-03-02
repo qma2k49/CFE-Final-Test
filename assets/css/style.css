@@ -15,6 +15,13 @@
     gap: 30px;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
 #start-button {
     padding: 10px 20px;
     background-color: rgb(1, 189, 1);
@@ -30,6 +37,13 @@
 #start-button:hover {
     background-color: rgb(1, 189, 1);
     transform: scale(1.1);
+}
+
+#win-message {
+    display: none;
+    color: #22c55e;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 main {
