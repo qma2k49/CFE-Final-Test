@@ -1,15 +1,27 @@
+let timer;
 // Chạy thời gian
 const btnStart1 = document.querySelector("#start-button");
+const winMessage = document.querySelector("#win-message");
 btnStart1.addEventListener("click", () => {
     if (btnStart1.innerHTML.trim() === "Kết thúc") {
         btnStart1.innerHTML = "Bắt đầu";
         btnStart1.style.backgroundColor = "";
+        winMessage.style.display = "none";
         clearInterval(timer);
+        return;
+    }
+    if (btnStart1.innerHTML.trim() === "Chơi lại") {
+        btnStart1.innerHTML = "Bắt đầu";
+        btnStart1.style.backgroundColor = "rgb(1, 189, 1)";
+        minute.innerHTML = "00";
+        second.innerHTML = "00";
+        winMessage.style.display = "none";
         return;
     }
     btnStart1.innerHTML = "Kết thúc";
     btnStart1.style.backgroundColor = "red";
-    const timer = setInterval(() => {
+
+    timer = setInterval(() => {
         const minute = document.querySelector("#minute");
         const second = document.querySelector("#second");
         let minuteValue = parseInt(minute.textContent);
@@ -21,17 +33,10 @@ btnStart1.addEventListener("click", () => {
         }
         second.innerHTML = secondValue >= 10 ? `${secondValue}` : `0${secondValue}`;
         minute.innerHTML = minuteValue >= 10 ? `${minuteValue}` : `0${minuteValue}`;
-        if (btnStart1.innerHTML.trim() === "Kết thúc") {
-            btnStart1.innerHTML = "Kết thúc";
-            btnStart1.style.backgroundColor = "red";
-        }
-        else {
+        if (btnStart1.innerHTML.trim() === "Bắt đầu") {
             minute.innerHTML = "00";
             second.innerHTML = "00";
-            btnStart1.innerHTML = "Bắt đầu";
-            btnStart1.style.backgroundColor = "";
             clearInterval(timer);
-            return;
         }
     }, 1000);
 });
