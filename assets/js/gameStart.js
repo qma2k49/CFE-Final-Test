@@ -10,6 +10,7 @@
     else {
         btn.innerHTML = "Bắt đầu";
         btn.style.backgroundColor = "";
+        return;
     }
 
     const boxes = document.querySelectorAll(".box");
@@ -17,8 +18,8 @@
 
     for (let i = 0; i < shuffleTimes; i++) {
         // Random 2 ô bất kì để hoán đổi
-        const boxA = Math.floor(Math.random() * 12);
-        const boxB = Math.floor(Math.random() * 12);
+        const boxA = Math.floor(Math.random() * boxes.length);
+        const boxB = Math.floor(Math.random() * boxes.length);
 
         // Hoán đổi nội dung của boxA và boxB
         const temp = boxes[boxA].innerHTML;
