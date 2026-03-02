@@ -1,9 +1,11 @@
-// Hiện ra lịch sử
-const result = JSON.parse(localStorage.getItem("result"));
+const gameHistory = JSON.parse(localStorage.getItem("gameHistory")) || [];
 const tableBody = document.querySelector("tbody");
-const row = document.createElement("tr");
-row.innerHTML = `
-<td>${tableBody.children.length + 1}</td>
-<td>${result.moveCount}</td>
-<td>${result.time}</td>`;
-tableBody.appendChild(row);
+
+gameHistory.forEach((item, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${item.moveCount}</td>
+        <td>${item.time}</td>`;
+    tableBody.appendChild(row);
+});

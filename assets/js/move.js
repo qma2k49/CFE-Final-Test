@@ -89,7 +89,10 @@ document.addEventListener("keydown", (event) => {
                 moveCount: moveCount,
                 time: `${minute.innerHTML}:${second.innerHTML}`
             };
-            localStorage.setItem("result", JSON.stringify(result));
+
+            let history = JSON.parse(localStorage.getItem("gameHistory")) || [];
+            history.splice(0, 0, result);
+            localStorage.setItem("gameHistory", JSON.stringify(history));
 
         }
 
