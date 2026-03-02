@@ -7,6 +7,8 @@ btnStart1.addEventListener("click", () => {
         btnStart1.innerHTML = "Bắt đầu";
         btnStart1.style.backgroundColor = "";
         winMessage.style.display = "none";
+        minute.innerHTML = "00";
+        second.innerHTML = "00";
         clearInterval(timer);
         return;
     }
