@@ -22,6 +22,7 @@ btnStart1.addEventListener("click", () => {
     }
     btnStart1.innerHTML = "Kết thúc";
     btnStart1.style.backgroundColor = "red";
+    moveCount = 0;
 
     timer = setInterval(() => {
         const minute = document.querySelector("#minute");
