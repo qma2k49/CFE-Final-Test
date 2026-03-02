@@ -3,19 +3,22 @@ btnStart2.addEventListener("click", () => {
     if (btnStart2.innerHTML.trim() === "Bắt đầu") {
         return;
     }
-    const boxes = document.querySelectorAll(".box");
+    if (btnStart2.innerHTML.trim() === "Chơi lại") {
+        return;
+    }
+    const boxes1 = document.querySelectorAll(".box");
     const shuffleTimes = 100;
     for (let i = 0; i < shuffleTimes; i++) {
         // Random 2 ô bất kì để hoán đổi
-        const boxA = Math.floor(Math.random() * boxes.length);
-        const boxB = Math.floor(Math.random() * boxes.length);
+        const boxA = Math.floor(Math.random() * boxes1.length);
+        const boxB = Math.floor(Math.random() * boxes1.length);
         // Hoán đổi nội dung của boxA và boxB
-        const temp = boxes[boxA].innerHTML;
-        boxes[boxA].innerHTML = boxes[boxB].innerHTML;
-        boxes[boxB].innerHTML = temp;
+        const temp = boxes1[boxA].innerHTML;
+        boxes1[boxA].innerHTML = boxes1[boxB].innerHTML;
+        boxes1[boxB].innerHTML = temp;
         // Đổi className
-        const tempClass = boxes[boxA].className;
-        boxes[boxA].className = boxes[boxB].className;
-        boxes[boxB].className = tempClass;
+        const tempClass = boxes1[boxA].className;
+        boxes1[boxA].className = boxes1[boxB].className;
+        boxes1[boxB].className = tempClass;
     }
 });
